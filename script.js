@@ -214,4 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
     triggerGlobalErrorBtn.addEventListener('click', () => {
         nonExistentFunctionCall();
     });
+
+    // Manual test for TrackJS (can be removed after verification)
+    TrackJS.track('Manual Test Error: Testing TrackJS from script.js!');
 });
