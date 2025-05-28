@@ -7,6 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lab 9</title>
 
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>
+    window.TrackJS && TrackJS.install({
+      token: "5333ddec302345baa605b3dec56f0a33" 
+    });
+  </script>
   <style>
     button {
       margin: 3px;
@@ -69,40 +75,32 @@
     </form>
 
     <section id="error-btns">
-      <button>Console Log</button>
-      <button>Console Error</button>
-      <button>Console Count</button>
-      <button>Console Warn</button>
-      <button>Console Assert</button>
-      <button>Console Clear</button>
-      <button>Console Dir</button>
-      <button>Console dirxml</button>
-      <button>Console Group Start</button>
-      <button>Console Group End</button>
-      <button>Console Table</button>
-      <button>Start Timer</button>
-      <button>End Timer</button>
-      <button>Console Trace</button>
-      <button>Trigger a Global Error</button>
+      <button id="consoleLogBtn">Console Log</button>
+      <button id="consoleErrorBtn">Console Error</button>
+      <button id="consoleCountBtn">Console Count</button>
+      <button id="consoleWarnBtn">Console Warn</button>
+      <button id="consoleAssertBtn">Console Assert</button>
+      <button id="consoleClearBtn">Console Clear</button>
+      <button id="consoleDirBtn">Console Dir</button>
+      <button id="consoleDirxmlBtn">Console dirxml</button>
+      <button id="consoleGroupStartBtn">Console Group Start</button>
+      <button id="consoleGroupEndBtn">Console Group End</button>
+      <button id="consoleTableBtn">Console Table</button>
+      <button id="startTimerBtn">Start Timer</button>
+      <button id="endTimerBtn">End Timer</button>
+      <button id="consoleTraceBtn">Console Trace</button>
+      <button id="triggerGlobalErrorBtn">Trigger a Global Error</button>
     </section>
+
+    <div id="elementToInspect" style="margin-top: 20px; border: 1px dashed blue; padding: 10px;">
+        <h3>Element for console.dir and console.dirxml</h3>
+        <p>This is a paragraph inside the element to inspect.</p>
+        <span>Another span.</span>
+        <p style="color: green;">Another paragraph with a <a href="#">link</a>.</p>
+    </div>
   </main>
 
-  <script>
-    let form = document.querySelector('form');
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      let output = document.querySelector('output');
-      let firstNum = document.querySelector('#first-num').value;
-      let secondNum = document.querySelector('#second-num').value;
-      let operator = document.querySelector('#operator').value;
-      output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
-    });
-
-    let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
-
-    // Start your code here
-    // You may move this JS to another file if you wish
-  </script>
+  <script src="script.js"></script>
 </body>
 
 </html>
